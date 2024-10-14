@@ -1,11 +1,12 @@
 package com.example.db.store;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
-public class Stores {
+@Table(name = "stores")
+public class Store {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long storeId;
     private String storeName;
     private String storeAddress;
