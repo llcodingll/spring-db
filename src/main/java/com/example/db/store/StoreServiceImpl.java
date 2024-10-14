@@ -2,6 +2,7 @@ package com.example.db.store;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -17,8 +18,11 @@ public class StoreServiceImpl implements StoreService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Store update(Long id, Store store) {
-        return null;
+        Store store1 = getById(id);
+        storeRepository.save(store1);
+        return store1;
     }
 
     @Override
@@ -39,6 +43,6 @@ public class StoreServiceImpl implements StoreService {
 
     @Override
     public List<Store> getByContainName(String name) {
-        return List.of();
+        return storeRepository.findByNameContainingOrderByIdDesc(name);
     }
 }

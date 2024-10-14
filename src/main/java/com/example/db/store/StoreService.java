@@ -10,4 +10,5 @@ public interface StoreService {
     List<Store> getByContainName(String name);
     List<Store> getAll();
     void deleteById(Long id);
+
 }

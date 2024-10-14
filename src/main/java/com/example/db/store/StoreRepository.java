@@ -2,6 +2,8 @@ package com.example.db.store;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface StoreRepository extends JpaRepository<Store, Long> {
+import java.util.List;
 
+public interface StoreRepository extends JpaRepository<Store, Long> {
+    List<Store> findByNameContainingOrderByIdDesc(String name);
 }
