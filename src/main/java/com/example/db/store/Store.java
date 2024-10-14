@@ -14,11 +14,10 @@ public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "store_id")
-    private Long Id;
+    private Long id;
     @Column(name = "store_name", nullable = false)
-    private String storeName;
+    private String name;
     @Column(name = "store_address")
-    private String storeAddress;
-
+    private String address;
 
 }

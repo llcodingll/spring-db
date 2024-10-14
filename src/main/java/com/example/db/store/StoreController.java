@@ -19,8 +19,8 @@ public class StoreController {
     }
 
     @PutMapping("{id}")
-    public void updateStore(@PathVariable Long id
-            , @RequestBody Store store){
+    public void updateStore(
+            @PathVariable Long id,@RequestBody Store store){
         storeService.update(id, store);
     }
 
