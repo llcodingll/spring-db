@@ -7,8 +7,11 @@ import jakarta.persistence.*;
 public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long storeId;
+    @Column(name = "store_id")
+    private Long Id;
+    @Column(name = "store_name")
     private String storeName;
+    @Column(name = "store_address")
     private String storeAddress;
 
 }
